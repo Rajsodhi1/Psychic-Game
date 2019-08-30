@@ -1,1 +1,2 @@
 # Psychic-Game
+//psychic game. I wanted to include everything in one file rather than linking to outside style sheets. I intend on making an alternate version when I have time over this long weekend (hint: i'll have time.)

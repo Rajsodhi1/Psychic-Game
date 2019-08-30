@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <title>Psychic Game</title>
+</head>
+<body>
+    <div id="game">
+        <h1>Guess what letter I'm thinking of</h1>
+        <h3 id="wins">Wins: </h3>
+        <h3 id="losses">Losses: </h3>
+        <h3 id="guessesLeft">Guesses Left: </h3>
+        <h3 id="guessesEntered">Your Guesses Entered:</h3>
+    </div>
+    <script type="text/javascript">
+        var wins = document.getElementById("wins");
+        var losses = document.getElementById("losses");
+        var guessesLeft = document.getElementById("guessesLeft");
+        var guessesEntered = document.getElementById("guessesEntered");
+    
+        var allLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+        var winsCount = 0;
+        var lossesCount = 0;
+        var defaultGuessesLeft = 9;
+        var guessesLeftCount = defaultGuessesLeft;
+        var guessesArray = [];
+    
+        var getRandomLetter = function () {
+            randomLetter = allLetters[Math.floor(Math.random()*allLetters.length)]
+            console.log(randomLetter);
+            return randomLetter
+        }	
+    
+        var displayStats = function () {
+            wins.innerHTML = "Wins: " + winsCount
+            losses.innerHTML = "Losses: " + lossesCount
+            guessesLeft.innerHTML = "Guesses Left: " + guessesLeftCount
+            guessesEntered.innerHTML = "Your Guesses Entered: " + guessesArray
+        }
+    
+        var resetGame = function () {
+            guessesArray = [];
+            guessesLeftCount = defaultGuessesLeft;
+            currentLetter = getRandomLetter();
+        }
+    
+        var userWon = function (userLetter) {
+            return userLetter === currentLetter 
+        }
+    
+        var userLost = function () {
+            return guessesLeftCount === 0;
+        }
+    
+        var currentLetter = getRandomLetter();
+        displayStats();
+        document.onkeyup = function (event) {
+            var userLetter = event.key;
+            guessesLeftCount--
+            guessesArray.push(userLetter)
+    
+            if (userWon(userLetter)) {
+                winsCount++;
+                resetGame();
+            } 
+    
+            if (userLost()) {
+                lossesCount++;
+                resetGame();
+            }
+    
+            displayStats();
+        }
+    </script>    
+</body>
