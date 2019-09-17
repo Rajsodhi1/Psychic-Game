@@ -1,2 +1,6 @@
 # Psychic-Game
-//psychic game. I wanted to include everything in one file rather than linking to outside style sheets. I intend on making an alternate version when I have time over this long weekend (hint: i'll have time.)
+Basic Gussing game using Javascript. Wins, losses, guesses left and guesses remaining are logged for the user. 
+
+Deployment link:
+ https://rajsodhi1.github.io/Psychic-Game/.
+  https://github.com/Rajsodhi1
