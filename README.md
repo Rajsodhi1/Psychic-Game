@@ -22,4 +22,4 @@ Play the game here:
  https://rajsodhi1.github.io/Psychic-Game/.
 
  Find my repository here:
-  https://github.com/Rajsodhi1
+https://github.com/Rajsodhi1/Psychic-Game
